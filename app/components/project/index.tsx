@@ -1,6 +1,5 @@
 'use client';
 import React from 'react'
-import styles from './style.module.css';
 import Image from "next/image";
 
 export default function index({index, title, date, href, src, setModal}) {

@@ -4,12 +4,12 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 import locomotiveScroll from "locomotive-scroll";
-import { motion, Variants, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion"
+import { motion, Variants, useScroll, useTransform, useSpring } from "framer-motion"
 
 import Project from './components/project';
 import Modal from './components/modal';
 
-import Preloader from './components/preloader'
+//import Preloader from './components/preloader'
 
 const awards = [
 	{
@@ -100,7 +100,7 @@ const cards: Variants = {
 	}
 };
 
-const editEffect: Variants = {
+/*const editEffect: Variants = {
 	offscreen: {
 		y: -50,
 		opacity: 0, // Fades out
@@ -116,7 +116,7 @@ const editEffect: Variants = {
 			duration: 1, // Adjust this as needed for speed
 		}
 	}
-};
+};*/
 
 
 export default function Home() {
@@ -143,12 +143,12 @@ export default function Home() {
 
 	useEffect(() => {
 		// Simulate loading delay (e.g., for fetching resources)
-		setTimeout(() => {
+		const timer = setTimeout(() => {
 		  setIsLoading(false); // Stop loading after the simulated delay
 		}, 3000); // 3 seconds delay (or adjust accordingly)
 	
+		// Only initialize Locomotive Scroll after loading is complete
 		if (!isLoading) {
-		  // Initialize Locomotive Scroll only after loading is complete
 		  const scroll = new locomotiveScroll({
 			el: scrollRef.current,
 			smooth: true,
@@ -159,7 +159,10 @@ export default function Home() {
 			scroll.destroy();
 		  };
 		}
-	  }, [isLoading]);
+	
+		return () => clearTimeout(timer); // Clean up timer on component unmount
+	  }, [isLoading]); // Include isLoading in the dependency array
+	
 
 	return (
 		<div>

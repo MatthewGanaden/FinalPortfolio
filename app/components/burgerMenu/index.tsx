@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Nav from './nav/index';
 import { AnimatePresence } from 'framer-motion';
 
-export default function index() {
+export default function Index() {
 
     const [isActive, setIsActive] = useState(false);
     return (

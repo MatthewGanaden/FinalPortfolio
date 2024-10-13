@@ -26,7 +26,7 @@ export default function Index() {
     const scrollToSection = (sectionIds) => {
         if (Array.isArray(sectionIds)) {
             // Loop through the sectionIds to find the visible one
-            for (let sectionId of sectionIds) {
+            for (const sectionId of sectionIds) {
                 if (isElementVisible(sectionId)) {
                     scrollToVisibleSection(sectionId);
                     break;
