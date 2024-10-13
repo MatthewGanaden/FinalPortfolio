@@ -1,0 +1,50 @@
+.button{
+    
+    right:0;
+    width: 60px;
+    height: 60px;
+    background-color: #1473E6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+
+    /* Hover effect to change the background color */
+    &:hover {
+        background-color: #0D66D0; /* New background color on hover */
+    }
+
+    .burger{
+        width: 100%;
+        &::after, &::before{
+            content: "";
+            display: block;
+            width: 40%;
+            background-color: white;
+            height: 1px;
+            margin:auto;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        &::after{
+            top: -5px;
+        }
+        &::before{
+            top: 5px;
+        }
+    }
+
+    .burgerActive{
+        &::after{
+            top: -1px;
+            transform: rotate(45deg);
+        }
+        &::before{
+            top: 1px;
+            transform: rotate(-45deg);
+        }
+    }
+}
