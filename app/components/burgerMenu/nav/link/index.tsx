@@ -1,4 +1,4 @@
-import styles from './style.module.scss';
+/*import styles from './style.module.scss';
 import Link from 'next/link';
 
 export default function index({ data }) {
@@ -10,3 +10,4 @@ export default function index({ data }) {
         </div>
     );
 }
+*/

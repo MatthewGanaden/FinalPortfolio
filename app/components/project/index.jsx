@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from "next/image";
 
-export default function index({index, title, date, href, src, setModal}) {
+export default function Index({index, title, date, href, src, setModal}) {
 
     return (
         

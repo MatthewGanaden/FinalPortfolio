@@ -14,7 +14,7 @@ export default function Index() {
     ];
 
     // Function to check if an element is visible
-    const isElementVisible = (elementId) => {
+    const isElementVisible = (elementId: string): boolean => {
         const element = document.getElementById(elementId);
         if (!element) return false;
 
@@ -22,11 +22,12 @@ export default function Index() {
         return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
     };
 
+
     // Function to handle smooth scrolling to the visible section
-    const scrollToSection = (sectionIds) => {
+    const scrollToSection = (sectionIds: string | string[]) => {
         if (Array.isArray(sectionIds)) {
             // Loop through the sectionIds to find the visible one
-            for (const sectionId of sectionIds) {
+            for (const sectionId of sectionIds) { // Use 'const' here
                 if (isElementVisible(sectionId)) {
                     scrollToVisibleSection(sectionId);
                     break;
@@ -37,8 +38,10 @@ export default function Index() {
         }
     };
 
+
+
     // Function to scroll to the visible section
-    const scrollToVisibleSection = (sectionId) => {
+    const scrollToVisibleSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);
         if (section) {
             const offset = 100; // Adjust the offset as needed
@@ -49,6 +52,7 @@ export default function Index() {
             });
         }
     };
+
 
     return (
         <motion.div

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-import locomotiveScroll from "locomotive-scroll";
 import { motion, Variants, useScroll, useTransform, useSpring } from "framer-motion"
 
 import Project from './components/project';
@@ -38,14 +37,14 @@ const awards = [
 const certificates = [
 	{
 	  title: "Foundations of User Experience (UX) Design",
-	  href: "https://www.coursera.org/account/accomplishments/verify/KDNQ6KNQVRQ9",
+	  href: "https://www.facebook.com/photo?fbid=124150950183349&set=pcb.124151813516596",
 	  src: "Certificate_Google.png",
 	  date: "2021",
 	  color: "#323232"
 	},
 	{
 	  title: "Fundamentals of Deep Learning",
-	  href: "https://learn.nvidia.com/certificates?id=NoZPUZ5GSNm6f0vwrQRO_Q",
+	  href: "https://www.facebook.com/photo/?fbid=338122131917540&set=a.196358472760574",
 	  src: "Certificate_Nvidia.png",
 	  date: "2023",
 	  color: "#8C8C8C"
@@ -120,7 +119,6 @@ const cards: Variants = {
 
 
 export default function Home() {
-	const scrollRef = React.createRef();
 	const targetRef = useRef<HTMLDivElement | null>(null);
 	const { scrollYProgress } = useScroll({
 		target: targetRef,
@@ -143,33 +141,19 @@ export default function Home() {
 
 	useEffect(() => {
 		// Simulate loading delay (e.g., for fetching resources)
-		const timer = setTimeout(() => {
+		setTimeout(() => {
 		  setIsLoading(false); // Stop loading after the simulated delay
 		}, 3000); // 3 seconds delay (or adjust accordingly)
 	
-		// Only initialize Locomotive Scroll after loading is complete
-		if (!isLoading) {
-		  const scroll = new locomotiveScroll({
-			el: scrollRef.current,
-			smooth: true,
-		  });
-	
-		  return () => {
-			// Clean up Locomotive Scroll instance on component unmount
-			scroll.destroy();
-		  };
-		}
-	
-		return () => clearTimeout(timer); // Clean up timer on component unmount
-	  }, [isLoading]); // Include isLoading in the dependency array
-	
+		
+	  }, [isLoading]);
 
 	return (
 		<div>
 			{/*{isLoading ? (
         		<Preloader /> // Show preloader while loading
       		) : (*/}
-				<div className="py-16" ref={scrollRef}>
+				<div className="py-16" >
 			
 					{/* Hero Secion */}
 					<section id="home" className="grid lg:grid-cols-2 mx-2 md:mx-32 h-[calc(100vh-5rem)] items-center justify-center">
