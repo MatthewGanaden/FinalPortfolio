@@ -99,24 +99,6 @@ const cards: Variants = {
 	}
 };
 
-/*const editEffect: Variants = {
-	offscreen: {
-		y: -50,
-		opacity: 0, // Fades out
-		scale: 0,   // Start at 0% scale
-	},
-	onscreen: {
-		y: 0,
-		opacity: 1, // Fades in
-		scale: 1,   // Scale to 100%
-		transition: {
-			type: "spring",
-			bounce: 0.3,
-			duration: 1, // Adjust this as needed for speed
-		}
-	}
-};*/
-
 
 export default function Home() {
 	const targetRef = useRef<HTMLDivElement | null>(null);
@@ -124,7 +106,7 @@ export default function Home() {
 		target: targetRef,
 	});
 
-	const x = useTransform(scrollYProgress, [0, 1], ["100%", "-100%"]);
+	const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
 
 	{/** modal for projects section */}
 	const [modal, setModal] = useState({active: false, index: 0})
@@ -180,7 +162,7 @@ export default function Home() {
 					<div className="mx-2 md:mx-36 lg:mx-64">
 						{/* Techstack Secion for sm and md */}
 						<section id="techstack-small" className="flex flex-col gap-2 items-center justify-items-center mx-auto md:hidden">
-							<div className="bg-gray  w-full z-10 flex rounded items-center justify-center">
+							<div className="bg-gray z-10 flex rounded items-center justify-center">
 								<h2 className="text-3xl md:text-4xl font-bold text-center w-3/4 leading-[1.2] py-6">These are the technologies I use</h2>
 							</div>
 							<motion.div 
@@ -472,16 +454,16 @@ export default function Home() {
 										<div className="absolute inset-0 flex flex-col items-center justify-center z-10">
 		
 											<div className="relative z-10 flex flex-col items-center justify-center">
-												<motion.h2 className="text-white text-4xl font-bold" variants={cards}>DDStudios</motion.h2>
-												<motion.h3 className="text-white text-xl" variants={cards}>digital marketing agency</motion.h3>
-												<motion.h4 className="text-white text-sm font-bold" variants={cards}>(WordPress)</motion.h4>
-												<motion.a href="https://ddstudiosph.com" target="_blank" rel="noopener noreferrer" className="m-5 bg-blue w-32 h-10 flex items-center justify-center rounded hover:bg-[#0D66D0] transition-colors duration-300 ease-in-out" variants={cards}>View</motion.a>
+												<motion.h2 className="text-white text-4xl font-bold" variants={cards}>MJGanaden</motion.h2>
+												<motion.h3 className="text-white text-xl" variants={cards}>Portfolio site</motion.h3>
+												<motion.h4 className="text-white text-sm font-bold" variants={cards}>(React)</motion.h4>
+												<motion.a href="" target="_blank" rel="noopener noreferrer" className="m-5 bg-blue w-32 h-10 flex items-center justify-center rounded hover:bg-[#0D66D0] transition-colors duration-300 ease-in-out" variants={cards}>View</motion.a>
 											</div>
 										</div>
 										<div className="absolute inset-0 bg-black opacity-30">
 											
 										</div>
-										<Image src="/DDstudios.png" width={1920} height={1080} alt="Picture of the author" className="w-full" />
+										<Image src="/MJGanaden.svg" width={1920} height={1080} alt="Picture of the author" className="w-full" />
 									</motion.div>
 
 									<motion.div className="flex items-center justify-center w-full shrink-0 relative" initial="offscreen"
@@ -499,16 +481,43 @@ export default function Home() {
 										<div className="absolute inset-0 flex flex-col items-center justify-center z-10">
 		
 											<div className="relative z-10 flex flex-col items-center justify-center">
-												<motion.h2 className="text-white text-4xl font-bold" variants={cards}>MJGanaden</motion.h2>
-												<motion.h3 className="text-white text-xl" variants={cards}>Portfolio site</motion.h3>
-												<motion.h4 className="text-white text-sm font-bold" variants={cards}>(React)</motion.h4>
-												<motion.a href="" target="_blank" rel="noopener noreferrer" className="m-5 bg-blue w-32 h-10 flex items-center justify-center rounded hover:bg-[#0D66D0] transition-colors duration-300 ease-in-out" variants={cards}>View</motion.a>
+												<motion.h2 className="text-white text-4xl font-bold" variants={cards}>MJDGanaden</motion.h2>
+												<motion.h3 className="text-white text-xl" variants={cards}>Portfolio Site</motion.h3>
+												<motion.h4 className="text-white text-sm font-bold" variants={cards}>(Next.js)</motion.h4>
+												<motion.a href="https://mjdganaden.vercel.app/" target="_blank" rel="noopener noreferrer" className="m-5 bg-blue w-32 h-10 flex items-center justify-center rounded hover:bg-[#0D66D0] transition-colors duration-300 ease-in-out" variants={cards}>View</motion.a>
 											</div>
 										</div>
 										<div className="absolute inset-0 bg-black opacity-30">
 											
 										</div>
-										<Image src="/MJGanaden.svg" width={1920} height={1080} alt="Picture of the author" className="w-full" />
+										<Image src="/MJDGanaden.svg" width={1920} height={1080} alt="Picture of the author" className="w-full" />
+									</motion.div>
+
+									<motion.div className="flex items-center justify-center w-full shrink-0 relative" initial="offscreen"
+									whileInView="onscreen"
+									viewport={{ once: true, amount: 0.8 }}
+									variants={{
+										offscreen: {},
+										onscreen: {
+											transition: {
+												staggerChildren: 0.02, // Adjust delay between each child animation
+											}
+										}
+									}}>
+										{/* Centered text */}
+										<div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+		
+											<div className="relative z-10 flex flex-col items-center justify-center">
+												<motion.h2 className="text-white text-4xl font-bold" variants={cards}>MatthewGanaden</motion.h2>
+												<motion.h3 className="text-white text-xl" variants={cards}>My first portfolio site</motion.h3>
+												<motion.h4 className="text-white text-sm font-bold" variants={cards}>(HTML, CSS, Javascript)</motion.h4>
+												<motion.a href="https://matthewganaden.github.io/" target="_blank" rel="noopener noreferrer" className="m-5 bg-blue w-32 h-10 flex items-center justify-center rounded hover:bg-[#0D66D0] transition-colors duration-300 ease-in-out" variants={cards}>View</motion.a>
+											</div>
+										</div>
+										<div className="absolute inset-0 bg-black opacity-30">
+											
+										</div>
+										<Image src="/MatthewGanaden.svg" width={1920} height={1080} alt="Picture of the author" className="w-full" />
 									</motion.div>
 								</motion.div>
 
@@ -527,8 +536,8 @@ export default function Home() {
 										<Image src="/DDstudios.png" width={426} height={534} alt="Picture of the author" className="h-full w-full object-cover"/>
 									</div>
 									<div className="flex flex-col -mt-3">
-										<span className="text-3xl lg:text-4xl font-bold">DDStudios</span>
-										<span className="-mt-2">Knowledge in testing websites to ensure great functionality and user interaction</span>
+										<span className="text-3xl lg:text-4xl font-bold">MJGanaden</span>
+										<span className="-mt-2">(React)</span>
 									</div>
 								</div>
 								<div className="flex flex-col">
@@ -536,8 +545,17 @@ export default function Home() {
 										<Image src="/DDstudios.png" width={426} height={534} alt="Picture of the author" className="h-full w-full object-cover"/>
 									</div>
 									<div className="flex flex-col -mt-3">
-										<span className="text-3xl lg:text-4xl font-bold">MJGanaden</span>
-										<span className="-mt-2">Knowledge in testing websites to ensure great functionality and user interaction</span>
+										<span className="text-3xl lg:text-4xl font-bold">MJDGanaden</span>
+										<span className="-mt-2">(Next.js)</span>
+									</div>
+								</div>
+								<div className="flex flex-col">
+									<div className="w-full h-[280px] rounded overflow-hidden">
+										<Image src="/DDstudios.png" width={426} height={534} alt="Picture of the author" className="h-full w-full object-cover"/>
+									</div>
+									<div className="flex flex-col -mt-3">
+										<span className="text-3xl lg:text-4xl font-bold">MatthewGanaden</span>
+										<span className="-mt-2">(HTML, CSS, Javascript)</span>
 									</div>
 								</div>
 							</div>
