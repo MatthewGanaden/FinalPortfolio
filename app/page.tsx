@@ -457,7 +457,7 @@ export default function Home() {
 												<motion.h2 className="text-white text-4xl font-bold" variants={cards}>MJGanaden</motion.h2>
 												<motion.h3 className="text-white text-xl" variants={cards}>Portfolio site</motion.h3>
 												<motion.h4 className="text-white text-sm font-bold" variants={cards}>(React)</motion.h4>
-												<motion.a href="" target="_blank" rel="noopener noreferrer" className="m-5 bg-blue w-32 h-10 flex items-center justify-center rounded hover:bg-[#0D66D0] transition-colors duration-300 ease-in-out" variants={cards}>View</motion.a>
+												<motion.a href="" rel="noopener noreferrer" className="m-5 bg-blue w-32 h-10 flex items-center justify-center rounded hover:bg-[#0D66D0] transition-colors duration-300 ease-in-out" variants={cards}>View</motion.a>
 											</div>
 										</div>
 										<div className="absolute inset-0 bg-black opacity-30">
